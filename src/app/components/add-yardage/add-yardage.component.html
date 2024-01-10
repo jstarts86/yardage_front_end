@@ -1,0 +1,31 @@
+<div>
+  <div class="submit-form">
+    @if (!submitted) {
+      <div class="form-group">
+        <label for="title">Title</label>
+        <input
+          type="text"
+          class="form-control"
+          id="title"
+          required
+          [(ngModel)]="yardage.title"
+          name="title"
+        />
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <input
+          class="form-control"
+          id="description"
+          required
+          [(ngModel)]="yardage.description"
+          name="description"
+        />
+      </div>
+      <button (click)="saveYardage()" class="btn btn-success">Submit</button>
+    } @else {
+      <h4>Yardages was submitted successfully!</h4>
+      <button class="btn btn-success" (click)="newYardage()">Add</button>
+    }
+  </div>
+</div>

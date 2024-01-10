@@ -1,0 +1,80 @@
+@if (viewMode) {
+  @if (currentYardage.id) {
+    <h4>Yardages</h4>
+    <div>
+      <label><strong>Title: </strong></label> {{ currentYardage.title }}
+    </div>
+    <div>
+      <label> <strong>Status: </strong></label>
+      {{ currentYardage.isCompleted ? "Completed" : "Incomplete" }}
+    </div>
+    <a
+      class="badge badge-warning"
+      routerLink="/yardages/{{ currentYardage.id }}"
+    >
+      Edit
+    </a>
+  } @else {
+    <p>Please click on a Yardage</p>
+  }
+} @else {
+  @if (currentYardage.id) {
+    <div class="edit-form">
+      <h4>Yardage</h4>
+      <form>
+        <div class="form-group">
+          <label for="title"> Title </label>
+          <input
+            type="text"
+            class="form-control"
+            id="title"
+            [(ngModel)]="currentYardage.title"
+            name="title"
+          />
+        </div>
+        <div class="form-group">
+          <label for="description"> Description </label>
+          <input
+            type="text"
+            class="form-control"
+            id="description"
+            [(ngModel)]="currentYardage.description"
+            name="description"
+          />
+        </div>
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ currentYardage.isCompleted ? "Completed" : "Incomplete" }}
+        </div>
+      </form>
+      @if (currentYardage.isCompleted) {
+        <button
+          class="badge badge-primary mr-2"
+          (click)="updateCompleted(false)"
+        >
+          Mark Incomplete
+        </button>
+      } @else {
+        <button
+          class="badge badge-primary mr-2"
+          (click)="updateCompleted(true)"
+        >
+          COMPLETED!!!!
+        </button>
+      }
+      <button class="badge badge-danger mr-2" (click)="deleteYardage()">
+        Delete
+      </button>
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="(updateYardage)"
+      >
+        Update
+      </button>
+      <p>{{ message }}</p>
+    </div>
+  } @else {
+    <p>Cannot access this Yardage...</p>
+  }
+}
