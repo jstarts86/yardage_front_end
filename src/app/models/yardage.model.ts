@@ -1,5 +1,5 @@
 export class Yardage {
-  id?: any; // bigint in SQL
+  id?: any | null; // bigint in SQL
   title?: string | null; // varchar(255) in SQL
   description?: string | null; // varchar(255) in SQL
   startDate?: Date | null; // date in SQL, mapped to string in TypeScript

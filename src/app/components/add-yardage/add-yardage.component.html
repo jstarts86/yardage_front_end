@@ -1,3 +1,33 @@
+<div class="container">
+  <main>
+    <div class="py-5 text-center">
+      <h2>Adding a new yardage</h2>
+    </div>
+    <div class="row g-5">
+      <div class="col-md-7 col-lg-8">
+        <h4 class="mb-3"> Yardage Form</h4>
+      </div>
+    </div>
+    <div class="submit-form">
+      <div class="row g-3">
+
+
+      </div>
+
+    </div>
+
+  </main>
+
+</div>
+
+
+
+
+
+
+
+
+
 <div>
   <div class="submit-form">
     @if (!submitted) {
@@ -13,14 +43,14 @@
         />
       </div>
       <div class="form-group">
-        <label for="description">Description</label>
-        <input
-          class="form-control"
-          id="description"
-          required
-          [(ngModel)]="yardage.description"
-          name="description"
-        />
+      <label for="description">Description</label>
+      <input
+        class="form-control"
+        id="description"
+        required
+        [(ngModel)]="yardage.description"
+        name="description"
+      />
       </div>
       <button (click)="saveYardage()" class="btn btn-success">Submit</button>
     } @else {

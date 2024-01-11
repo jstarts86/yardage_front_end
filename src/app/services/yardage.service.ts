@@ -6,7 +6,7 @@ import { Yardage } from '../models/yardage.model';
 const baseUrl = 'http://localhost:8080/api/yardages';
 
 @Injectable({
-  providedIn: 'root',
+  providedIn: 'root'
 })
 export class YardageService {
   constructor(private http: HttpClient) {}

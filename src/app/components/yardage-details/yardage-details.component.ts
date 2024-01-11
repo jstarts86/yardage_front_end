@@ -15,7 +15,7 @@ export class YardageDetailsComponent implements OnInit {
     title: '',
     description: '',
     startDate: new Date(),
-    finishDate: new Date(),
+    finishDate: null,
     isCompleted: false,
     panels: 0,
     costPerYard: 0,
@@ -30,6 +30,7 @@ export class YardageDetailsComponent implements OnInit {
     widthPerPanel: 0, // integer in SQL
     yardagePerWidth: 0, // integer in SQL
   };
+
   message = '';
   constructor(
     private yardageService: YardageService,

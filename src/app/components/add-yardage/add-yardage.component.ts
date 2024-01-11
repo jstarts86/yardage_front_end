@@ -12,7 +12,7 @@ export class AddYardageComponent {
     title: '',
     description: '',
     startDate: new Date(),
-    finishDate: new Date(),
+    finishDate: null,
     isCompleted: false,
     panels: 0,
     costPerYard: 0,
