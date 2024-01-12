@@ -5,8 +5,16 @@
       <label><strong>Title: </strong></label> {{ currentYardage.title }}
     </div>
     <div>
-      <label> <strong>Status: </strong></label>
+      <label> <strong>Completion Status: </strong></label>
       {{ currentYardage.isCompleted ? "Completed" : "Incomplete" }}
+    </div>
+    <div>
+      <label><strong>Start Date: </strong></label>
+      {{ currentYardage.startDate }}
+    </div>
+    <div>
+      <label><strong>Finish Date: </strong></label>
+      {{ currentYardage.finishDate }}
     </div>
     <a
       class="badge badge-warning"
@@ -43,21 +51,21 @@
           />
         </div>
         <div class="form-group">
-          <label><strong>Status:</strong></label>
+          <label><strong>Completion Status:</strong></label>
           {{ currentYardage.isCompleted ? "Completed" : "Incomplete" }}
         </div>
       </form>
       @if (currentYardage.isCompleted) {
         <button
           class="badge badge-primary mr-2"
-          (click)="updateCompleted(false)"
+          (click)="updateIsCompleted(false)"
         >
           Mark Incomplete
         </button>
       } @else {
         <button
           class="badge badge-primary mr-2"
-          (click)="updateCompleted(true)"
+          (click)="updateIsCompleted(true)"
         >
           COMPLETED!!!!
         </button>

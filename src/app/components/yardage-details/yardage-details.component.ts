@@ -54,7 +54,7 @@ export class YardageDetailsComponent implements OnInit {
       error: (e) => console.error(e),
     });
   }
-  updateCompleted(status: boolean): void {
+  updateIsCompleted(status: boolean): void {
     const data = {
       title: this.currentYardage.title,
       description: this.currentYardage.description,

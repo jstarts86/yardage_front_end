@@ -3,59 +3,210 @@
     <div class="py-5 text-center">
       <h2>Adding a new yardage</h2>
     </div>
-    <div class="row g-5">
-      <div class="col-md-7 col-lg-8">
-        <h4 class="mb-3"> Yardage Form</h4>
-      </div>
-    </div>
-    <div class="submit-form">
-      <div class="row g-3">
-
-
-      </div>
-
-    </div>
-
-  </main>
-
-</div>
-
-
-
-
-
-
-
-
-
-<div>
-  <div class="submit-form">
-    @if (!submitted) {
-      <div class="form-group">
-        <label for="title">Title</label>
-        <input
-          type="text"
-          class="form-control"
-          id="title"
-          required
-          [(ngModel)]="yardage.title"
-          name="title"
-        />
-      </div>
-      <div class="form-group">
-      <label for="description">Description</label>
-      <input
-        class="form-control"
-        id="description"
-        required
-        [(ngModel)]="yardage.description"
-        name="description"
-      />
-      </div>
+    <div class="row">
+      <div class="col-md-12 order-md-1">
+        <h4 class="mb-3">Yardage Form</h4>
+        @if (!submitted) {
+          <div class="submit-form">
+            <div class="col-md-8 mb-3">
+              <div class="col-md-8">
+                <div class="form-group">
+                  <label for="title">Title</label>
+                  <input
+                    type="text"
+                    name="title"
+                    class="form-control"
+                    id="title"
+                    required
+                    [(ngModel)]="yardage.title"
+                  />
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="description">Description</label>
+                <input
+                  type="text"
+                  name="description"
+                  class="form-control"
+                  id="description"
+                  required
+                  [(ngModel)]="yardage.description"
+                />
+              </div>
+              <div class="form-group">
+                <label for="startDate">Start Date</label>
+                <input
+                  type="text"
+                  name="startDate"
+                  class="form-control"
+                  id="startDate"
+                  required
+                  [(ngModel)]="yardage.startDate"
+                />
+              </div>
+              <div class="form-group">
+                <label for="finishDate">FinishDate</label>
+                <input
+                  type="text"
+                  name="finishDate"
+                  class="form-control"
+                  id="finishDate"
+                  required
+                  [(ngModel)]="yardage.finishDate"
+                />
+              </div>
+              <div class="form-group">
+                <label for="isCompleted">Completed</label>
+                <input
+                  type="checkbox"
+                  name="isCompleted"
+                  class="form-control"
+                  id="isCompleted"
+                  required
+                  [(ngModel)]="yardage.isCompleted"
+                />
+              </div>
+              <div class="form-group">
+                <label for="panels">Panels</label>
+                <input
+                  type="text"
+                  name="panels"
+                  class="form-control"
+                  id="panels"
+                  required
+                  [(ngModel)]="yardage.panels"
+                />
+              </div>
+              <div class="form-group">
+                <label for="costPerYard">Cost Per Yard</label>
+                <input
+                  type="text"
+                  name="costPerYard"
+                  class="form-control"
+                  id="costPerYard"
+                  required
+                  [(ngModel)]="yardage.costPerYard"
+                />
+              </div>
+              <div class="form-group">
+                <label for="fabricCost">fabric Cost</label>
+                <input
+                  type="text"
+                  name="fabricCost"
+                  class="form-control"
+                  id="fabricCost"
+                  required
+                  [(ngModel)]="yardage.fabricCost"
+                />
+              </div>
+              <div class="form-group">
+                <label for="finishedLength">Finished Length</label>
+                <input
+                  type="text"
+                  name="finishedLength"
+                  class="form-control"
+                  id="finishedLength"
+                  required
+                  [(ngModel)]="yardage.finishedLength"
+                />
+              </div>
+              <div class="form-group">
+                <label for="laborCost">Labor Cost</label>
+                <input
+                  type="text"
+                  name="laborCost"
+                  class="form-control"
+                  id="laborCost"
+                  required
+                  [(ngModel)]="yardage.laborCost"
+                />
+              </div>
+              <div class="form-group">
+                <label for="liningCost">Lining Cost</label>
+                <input
+                  type="text"
+                  name="liningCost"
+                  class="form-control"
+                  id="liningCost"
+                  required
+                  [(ngModel)]="yardage.liningCost"
+                />
+              </div>
+              <div class="form-group">
+                <label for="liningPerYard">Lining Per Yard</label>
+                <input
+                  type="text"
+                  name="liningPerYard"
+                  class="form-control"
+                  id="liningPerYard"
+                  required
+                  [(ngModel)]="yardage.liningPerYard"
+                />
+              </div>
+              <div class="form-group">
+                <label for="shopSupplyCost">Shop Supply Cost</label>
+                <input
+                  type="text"
+                  name="shopSupplyCost"
+                  class="form-control"
+                  id="shopSupplyCost"
+                  required
+                  [(ngModel)]="yardage.shopSupplyCost"
+                />
+              </div>
+              <div class="form-group">
+                <label for="totalWidth">Total Width</label>
+                <input
+                  type="text"
+                  name="totalWidth"
+                  class="form-control"
+                  id="totalWidth"
+                  required
+                  [(ngModel)]="yardage.totalWidth"
+                />
+              </div>
+              <div class="form-group">
+                <label for="totalYardage">Total Yardage</label>
+                <input
+                  type="text"
+                  name="totalYardage"
+                  class="form-control"
+                  id="totalYardage"
+                  required
+                  [(ngModel)]="yardage.totalYardage"
+                />
+              </div>
+              <div class="form-group">
+                <label for="widthPerPanel">Width Per Panel</label>
+                <input
+                  type="text"
+                  name="widthPerPanel"
+                  class="form-control"
+                  id="widthPerPanel"
+                  required
+                  [(ngModel)]="yardage.widthPerPanel"
+                />
+              </div>
+              <div class="form-group">
+                <label for="yardagePerWidth">Yardage Per Width</label>
+                <input
+                  type="text"
+                  name="yardagePerWidth"
+                  class="form-control"
+                  id="yardagePerWidth"
+                  required
+                  [(ngModel)]="yardage.yardagePerWidth"
+                />
+              </div>
+            </div>
       <button (click)="saveYardage()" class="btn btn-success">Submit</button>
-    } @else {
-      <h4>Yardages was submitted successfully!</h4>
-      <button class="btn btn-success" (click)="newYardage()">Add</button>
-    }
-  </div>
+          </div>
+        } @else {
+          <h4>Yardages was submitted successfully!</h4>
+          <button class="btn btn-success" (click)="newYardage()">Add</button>
+        }
+      </div>
+    </div>
+  </main>
 </div>
+
