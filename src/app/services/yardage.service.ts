@@ -6,7 +6,7 @@ import { Yardage } from '../models/yardage.model';
 const baseUrl = 'http://localhost:8080/api/yardages';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class YardageService {
   constructor(private http: HttpClient) {}
@@ -15,7 +15,7 @@ export class YardageService {
     return this.http.get<Yardage[]>(baseUrl);
   }
   get(id: any): Observable<Yardage> {
-    return this.http.get<Yardage>('${baseUrl}/${id}');
+    return this.http.get<Yardage>(`${baseUrl}/${id}`);
   }
 
   create(data: any): Observable<any> {
@@ -23,10 +23,10 @@ export class YardageService {
   }
 
   update(id: any, data: any): Observable<any> {
-    return this.http.put('${baseUrl}/${id}', data);
+    return this.http.put(`${baseUrl}/${id}`, data);
   }
   delete(id: any): Observable<any> {
-    return this.http.delete('${baseUrl}/${id}');
+    return this.http.delete(`${baseUrl}/${id}`);
   }
 
   deleteAll(): Observable<any> {

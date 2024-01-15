@@ -46,6 +46,7 @@ export class YardageDetailsComponent implements OnInit {
   }
 
   getYardage(id: string): void {
+    console.log('The Current Id is ' + id);
     this.yardageService.get(id).subscribe({
       next: (data) => {
         this.currentYardage = data;

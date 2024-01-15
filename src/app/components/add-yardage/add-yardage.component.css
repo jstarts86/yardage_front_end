@@ -2,3 +2,13 @@
   max-width: 400px;
   margin: auto;
 }
+
+.checkbox-align {
+  display: flex;
+  align-items: left;
+}
+
+.custom-checkbox {
+  width: 30px;
+  height: 30px;
+}

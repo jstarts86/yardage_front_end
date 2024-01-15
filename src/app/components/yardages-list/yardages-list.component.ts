@@ -36,6 +36,7 @@ export class YardagesListComponent implements OnInit {
   setActiveYardage(yardage: Yardage, index: number): void {
     this.currentYardage = yardage;
     this.currentIndex = index;
+    console.log(this.currentYardage.id);
   }
   removeAllYardages(): void {
     this.yardageService.deleteAll().subscribe({
