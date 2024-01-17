@@ -4,7 +4,7 @@ export class Yardage {
   description?: string | null; // varchar(255) in SQL
   startDate?: Date | null; // date in SQL, mapped to string in TypeScript
   finishDate?: Date | null; // date in SQL, mapped to string in TypeScript
-  isCompleted?: Boolean | null;
+  completed?: Boolean | null;
   panels?: number | null; // integer in SQL
   costPerYard?: number | null; // numeric(38, 2) in SQL
   fabricCost?: number | null; // numeric(38, 2) in SQL

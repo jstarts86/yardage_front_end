@@ -16,7 +16,7 @@ export class YardageDetailsComponent implements OnInit {
     description: '',
     startDate: new Date(),
     finishDate: null,
-    isCompleted: false,
+    completed: false,
     panels: 0,
     costPerYard: 0,
     fabricCost: 0, // numeric(38, 2) in SQL
@@ -47,6 +47,7 @@ export class YardageDetailsComponent implements OnInit {
 
   getYardage(id: string): void {
     console.log('The Current Id is ' + id);
+
     this.yardageService.get(id).subscribe({
       next: (data) => {
         this.currentYardage = data;
@@ -61,7 +62,7 @@ export class YardageDetailsComponent implements OnInit {
       description: this.currentYardage.description,
       startDate: this.currentYardage.startDate,
       finishDate: this.currentYardage.finishDate,
-      isCompleted: status,
+      completed: status,
       panels: this.currentYardage.panels,
       costPerYard: this.currentYardage.costPerYard,
       fabricCost: this.currentYardage.fabricCost,
@@ -80,7 +81,7 @@ export class YardageDetailsComponent implements OnInit {
     this.yardageService.update(this.currentYardage.id, data).subscribe({
       next: (res) => {
         console.log(res);
-        this.currentYardage.isCompleted = status;
+        this.currentYardage.completed = status;
         this.message = res.message
           ? res.message
           : 'The status was updated successfully!';

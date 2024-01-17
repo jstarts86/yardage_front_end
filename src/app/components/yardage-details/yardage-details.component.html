@@ -6,7 +6,7 @@
     </div>
     <div>
       <label> <strong>Completion Status: </strong></label>
-      {{ currentYardage.isCompleted ? "Completed" : "Incomplete" }}
+      {{ currentYardage.completed ? "Completed" : "Incomplete" }}
     </div>
     <div>
       <label><strong>Start Date: </strong></label>
@@ -27,60 +27,270 @@
   }
 } @else {
   @if (currentYardage.id) {
-    <div class="edit-form">
-      <h4>Yardage</h4>
-      <form>
-        <div class="form-group">
-          <label for="title"> Title </label>
-          <input
-            type="text"
-            class="form-control"
-            id="title"
-            [(ngModel)]="currentYardage.title"
-            name="title"
-          />
+    <div class="row">
+      <div class="col-md-8 order-md-1">
+        <div class="edit-form">
+          <h4>Yardage</h4>
+          <form>
+            <div class="form-group">
+              <label for="title"> Title </label>
+              <input
+                type="text"
+                class="form-control"
+                id="title"
+                [(ngModel)]="currentYardage.title"
+                name="title"
+              />
+            </div>
+            <div class="form-group">
+              <label for="description"> Description </label>
+              <input
+                type="text"
+                class="form-control"
+                id="description"
+                [(ngModel)]="currentYardage.description"
+                name="description"
+              />
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="startDate">Start Date</label>
+                  <input
+                    type="date"
+                    name="startDate"
+                    class="form-control"
+                    id="startDate"
+                    required
+                    [(ngModel)]="currentYardage.startDate"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="finishDate">FinishDate</label>
+                  <input
+                    type="date"
+                    name="finishDate"
+                    class="form-control"
+                    id="finishDate"
+                    required
+                    [(ngModel)]="currentYardage.finishDate"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="panels">Panels</label>
+                  <input
+                    type="text"
+                    name="panels"
+                    class="form-control"
+                    id="panels"
+                    required
+                    [(ngModel)]="currentYardage.panels"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="costPerYard">Cost Per Yard</label>
+                  <input
+                    type="text"
+                    name="costPerYard"
+                    class="form-control"
+                    id="costPerYard"
+                    required
+                    [(ngModel)]="currentYardage.costPerYard"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="fabricCost">fabric Cost</label>
+                  <input
+                    type="text"
+                    name="fabricCost"
+                    class="form-control"
+                    id="fabricCost"
+                    required
+                    [(ngModel)]="currentYardage.fabricCost"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="finishedLength">Finished Length</label>
+                  <input
+                    type="text"
+                    name="finishedLength"
+                    class="form-control"
+                    id="finishedLength"
+                    required
+                    [(ngModel)]="currentYardage.finishedLength"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="laborCost">Labor Cost</label>
+                  <input
+                    type="text"
+                    name="laborCost"
+                    class="form-control"
+                    id="laborCost"
+                    required
+                    [(ngModel)]="currentYardage.laborCost"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="liningCost">Lining Cost</label>
+                  <input
+                    type="text"
+                    name="liningCost"
+                    class="form-control"
+                    id="liningCost"
+                    required
+                    [(ngModel)]="currentYardage.liningCost"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="liningPerYard">Lining Per Yard</label>
+                  <input
+                    type="text"
+                    name="liningPerYard"
+                    class="form-control"
+                    id="liningPerYard"
+                    required
+                    [(ngModel)]="currentYardage.liningPerYard"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="shopSupplyCost">Shop Supply Cost</label>
+                  <input
+                    type="text"
+                    name="shopSupplyCost"
+                    class="form-control"
+                    id="shopSupplyCost"
+                    required
+                    [(ngModel)]="currentYardage.shopSupplyCost"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="totalWidth">Total Width</label>
+                  <input
+                    type="text"
+                    name="totalWidth"
+                    class="form-control"
+                    id="totalWidth"
+                    required
+                    [(ngModel)]="currentYardage.totalWidth"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="totalYardage">Total Yardage</label>
+                  <input
+                    type="text"
+                    name="totalYardage"
+                    class="form-control"
+                    id="totalYardage"
+                    required
+                    [(ngModel)]="currentYardage.totalYardage"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="widthPerPanel">Width Per Panel</label>
+                  <input
+                    type="text"
+                    name="widthPerPanel"
+                    class="form-control"
+                    id="widthPerPanel"
+                    required
+                    [(ngModel)]="currentYardage.widthPerPanel"
+                  />
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <div class="form-group">
+                  <label for="yardagePerWidth">Yardage Per Width</label>
+                  <input
+                    type="text"
+                    name="yardagePerWidth"
+                    class="form-control"
+                    id="yardagePerWidth"
+                    required
+                    [(ngModel)]="currentYardage.yardagePerWidth"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <div class="form-group">
+                <label><strong>Completion Status:</strong></label>
+                {{ currentYardage.completed ? "Completed" : "Incomplete" }}
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="form-group">
-          <label for="description"> Description </label>
-          <input
-            type="text"
-            class="form-control"
-            id="description"
-            [(ngModel)]="currentYardage.description"
-            name="description"
-          />
+        @if (currentYardage.completed) {
+          <div class="col-md-6 mb-3">
+            <button
+              class="badge badge-primary mr-2"
+              (click)="updateIsCompleted(false)"
+            >
+              Mark Incomplete
+            </button>
+          </div>
+        } @else {
+          <div class="col-md-4 mb-3">
+            <button
+              class="badge badge-primary mr-2"
+              (click)="updateIsCompleted(true)"
+            >
+              COMPLETED!!!!
+            </button>
+          </div>
+        }
+
+        <div class="col-md-4 mb-3">
+          <button class="badge badge-danger mr-2" (click)="deleteYardage()">
+            Delete
+          </button>
+          <button
+            type="submit"
+            class="badge badge-success mb-2"
+            (click)="(updateYardage)"
+          >
+            Update
+          </button>
+          <p>{{ message }}</p>
         </div>
-        <div class="form-group">
-          <label><strong>Completion Status:</strong></label>
-          {{ currentYardage.isCompleted ? "Completed" : "Incomplete" }}
-        </div>
-      </form>
-      @if (currentYardage.isCompleted) {
-        <button
-          class="badge badge-primary mr-2"
-          (click)="updateIsCompleted(false)"
-        >
-          Mark Incomplete
-        </button>
-      } @else {
-        <button
-          class="badge badge-primary mr-2"
-          (click)="updateIsCompleted(true)"
-        >
-          COMPLETED!!!!
-        </button>
-      }
-      <button class="badge badge-danger mr-2" (click)="deleteYardage()">
-        Delete
-      </button>
-      <button
-        type="submit"
-        class="badge badge-success mb-2"
-        (click)="(updateYardage)"
-      >
-        Update
-      </button>
-      <p>{{ message }}</p>
+      </div>
     </div>
   } @else {
     <p>Cannot access this Yardage...</p>

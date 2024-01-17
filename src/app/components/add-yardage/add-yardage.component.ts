@@ -13,7 +13,7 @@ export class AddYardageComponent {
     description: '',
     startDate: new Date(),
     finishDate: null,
-    isCompleted: false,
+    completed: false,
     panels: 0,
     costPerYard: 0,
     fabricCost: 0, // numeric(38, 2) in SQL
@@ -36,7 +36,7 @@ export class AddYardageComponent {
       description: this.yardage.description,
       startDate: this.yardage.startDate,
       finishDate: this.yardage.finishDate,
-      isCompleted: this.yardage.isCompleted,
+      completed: this.yardage.completed,
       panels: this.yardage.panels,
       costPerYard: this.yardage.costPerYard,
       fabricCost: this.yardage.fabricCost,
@@ -52,6 +52,7 @@ export class AddYardageComponent {
     };
     this.yardageService.create(data).subscribe({
       next: (res) => {
+        console.log(this.yardage.completed);
         console.log(res);
         this.submitted = true;
       },
@@ -65,7 +66,7 @@ export class AddYardageComponent {
       description: '',
       startDate: new Date(),
       finishDate: new Date(),
-      isCompleted: false,
+      completed: false,
       panels: 0,
       costPerYard: 0,
       fabricCost: 0, // numeric(38, 2) in SQL
