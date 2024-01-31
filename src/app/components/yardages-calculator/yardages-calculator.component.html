@@ -1,0 +1,199 @@
+<div class="container">
+  <main>
+    <h4>Calculator Form</h4>
+    <div class="row">
+      <div class="submit-form">
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="input_panels"> Input Panels</label>
+              <input
+                class="form-control"
+                type="text"
+                name="input_panels"
+                id="input_panels"
+                required
+                [(ngModel)]="input_panels"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="input_finished_length"> Input Finished Length</label>
+              <input
+                class="form-control"
+                type="text"
+                name="input_finished_length"
+                id="input_finished_length"
+                required
+                [(ngModel)]="input_finished_length"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="input_yardage_per_width">
+                Input Yardage Per Width</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                name="input_yardage_per_width"
+                id="input_yardage_per_width"
+                required
+                [(ngModel)]="input_yardage_per_width"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="input_width_per_panel"> Input Width Per Panel</label>
+              <input
+                class="form-control"
+                type="text"
+                name="input_width_per_panel"
+                id="input_width_per_panel"
+                required
+                [(ngModel)]="input_width_per_panel"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="input_cost_per_yard"> Input Cost Per Yard</label>
+              <input
+                class="form-control"
+                type="text"
+                name="input_cost_per_yard"
+                id="input_cost_per_yard"
+                required
+                [(ngModel)]="input_cost_per_yard"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="input_lining_per_yard">Input Lining Per Yard</label>
+              <input
+                class="form-control"
+                type="text"
+                name="input_lining_per_yard"
+                id="input_lining_per_yard"
+                required
+                [(ngModel)]="input_lining_per_yard"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="calculated_labor_cost"> Labor Cost</label>
+              <input
+                class="form-control"
+                type="text"
+                name="calculated_labor_cost"
+                id="calculated_labor_cost"
+                required
+                [(ngModel)]="calculated_labor_cost"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="calculated_total_width"> Total Width</label>
+              <input
+                class="form-control"
+                type="text"
+                name="calculated_total_width"
+                id="calculated_total_width"
+                required
+                [(ngModel)]="calculated_total_width"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="calculated_total_yardage"> Total Yardage</label>
+              <input
+                class="form-control"
+                type="text"
+                name="calculated_total_yardage"
+                id="calculated_total_yardage"
+                required
+                [(ngModel)]="calculated_total_yardage"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="calculated_fabric_cost"> Fabric Cost</label>
+              <input
+                class="form-control"
+                type="text"
+                name="calculated_fabric_cost"
+                id="calculated_fabric_cost"
+                required
+                [(ngModel)]="calculated_fabric_cost"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="calculated_shop_supply_cost"> Shop Supply Cost</label>
+              <input
+                class="form-control"
+                type="text"
+                name="calculated_shop_supply_cost"
+                id="calculated_shop_supply_cost"
+                required
+                [(ngModel)]="calculated_shop_supply_cost"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="calculated_lining_cost"> Lining Cost</label>
+              <input
+                class="form-control"
+                type="text"
+                name="calculated_lining_cost"
+                id="calculated_lining_cost"
+                required
+                [(ngModel)]="calculated_lining_cost"
+              />
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-md-6 mb-3">
+            <div class="form-group">
+              <label for="calculated_total_cost"> Total Cost</label>
+              <input
+                class="form-control"
+                type="text"
+                name="calculated_total_cost"
+                id="calculated_total_cost"
+                required
+                [(ngModel)]="calculated_total_cost"
+              />
+            </div>
+          </div>
+          <div class="col-md-6 mb-3">
+            <button (click)="fullyCalculate()" class="btn btn-success">
+              Calculate
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+</div>

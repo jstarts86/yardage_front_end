@@ -8,13 +8,15 @@ import { YardageDetailsComponent } from './components/yardage-details/yardage-de
 import { YardagesListComponent } from './components/yardages-list/yardages-list.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { YardagesCalculatorComponent } from './components/yardages-calculator/yardages-calculator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AddYardageComponent,
     YardageDetailsComponent,
-    YardagesListComponent
+    YardagesListComponent,
+    YardagesCalculatorComponent
   ],
   imports: [
     BrowserModule,
