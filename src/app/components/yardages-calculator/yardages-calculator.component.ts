@@ -21,7 +21,7 @@ export class YardagesCalculatorComponent {
   // Total cost  =
   input_panels: number;
   input_finished_length: number;
-  input_yardage_per_width: number;
+  calculated_yardage_per_width: number;
   input_width_per_panel: number;
   input_cost_per_yard: number;
   input_lining_per_yard: number;
@@ -35,7 +35,7 @@ export class YardagesCalculatorComponent {
   constructor() {
     this.input_panels = 0;
     this.input_finished_length = 0;
-    this.input_yardage_per_width = 0;
+    this.calculated_yardage_per_width = 0;
     this.input_width_per_panel = 0;
     this.input_cost_per_yard = 0;
     this.input_lining_per_yard = 0;
@@ -48,9 +48,8 @@ export class YardagesCalculatorComponent {
     this.calculated_total_cost = 0;
   }
   roundYardagePerWidth(): void {
-    this.input_yardage_per_width = Math.ceil(
-      (this.input_yardage_per_width + 16) / 18 / 36,
-    );
+    this.calculated_yardage_per_width =
+      ( Math.ceil((this.input_finished_length + 16) / 18) * 18 ) / 36;
   }
 
   calculateTotalWidth(): void {
@@ -59,7 +58,7 @@ export class YardagesCalculatorComponent {
   }
   calculateTotalYardage(): void {
     this.calculated_total_yardage =
-      this.input_panels * this.input_yardage_per_width +
+      this.input_panels * this.calculated_yardage_per_width +
       this.input_width_per_panel;
   }
   calculateTotalShopSupplyCost(): void {
@@ -72,11 +71,9 @@ export class YardagesCalculatorComponent {
   calculateLaborCost(): void {
     if (this.input_finished_length <= 108) {
       this.calculated_labor_cost = 90 * this.calculated_total_width;
-    } else if (this.input_finished_length > 108) {
+    } else {
       this.calculated_labor_cost = Math.ceil(
-        ((this.input_finished_length - 108) * 10 + 90) *
-          this.calculated_total_width,
-      );
+        ((this.input_finished_length - 108) / 12) * 10) + 90) * this.calculated_total_width;
     }
   }
   calculateTotalCost(): void {

@@ -9,7 +9,7 @@
               <label for="input_panels"> Input Panels</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="input_panels"
                 id="input_panels"
                 required
@@ -22,7 +22,7 @@
               <label for="input_finished_length"> Input Finished Length</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="input_finished_length"
                 id="input_finished_length"
                 required
@@ -34,25 +34,10 @@
         <div class="row">
           <div class="col-md-6 mb-3">
             <div class="form-group">
-              <label for="input_yardage_per_width">
-                Input Yardage Per Width</label
-              >
-              <input
-                class="form-control"
-                type="text"
-                name="input_yardage_per_width"
-                id="input_yardage_per_width"
-                required
-                [(ngModel)]="input_yardage_per_width"
-              />
-            </div>
-          </div>
-          <div class="col-md-6 mb-3">
-            <div class="form-group">
               <label for="input_width_per_panel"> Input Width Per Panel</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="input_width_per_panel"
                 id="input_width_per_panel"
                 required
@@ -60,14 +45,12 @@
               />
             </div>
           </div>
-        </div>
-        <div class="row">
           <div class="col-md-6 mb-3">
             <div class="form-group">
               <label for="input_cost_per_yard"> Input Cost Per Yard</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="input_cost_per_yard"
                 id="input_cost_per_yard"
                 required
@@ -75,12 +58,14 @@
               />
             </div>
           </div>
+        </div>
+        <div class="row">
           <div class="col-md-6 mb-3">
             <div class="form-group">
               <label for="input_lining_per_yard">Input Lining Per Yard</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="input_lining_per_yard"
                 id="input_lining_per_yard"
                 required
@@ -95,7 +80,7 @@
               <label for="calculated_labor_cost"> Labor Cost</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="calculated_labor_cost"
                 id="calculated_labor_cost"
                 required
@@ -108,7 +93,7 @@
               <label for="calculated_total_width"> Total Width</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="calculated_total_width"
                 id="calculated_total_width"
                 required
@@ -123,7 +108,7 @@
               <label for="calculated_total_yardage"> Total Yardage</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="calculated_total_yardage"
                 id="calculated_total_yardage"
                 required
@@ -136,7 +121,7 @@
               <label for="calculated_fabric_cost"> Fabric Cost</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="calculated_fabric_cost"
                 id="calculated_fabric_cost"
                 required
@@ -151,7 +136,7 @@
               <label for="calculated_shop_supply_cost"> Shop Supply Cost</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="calculated_shop_supply_cost"
                 id="calculated_shop_supply_cost"
                 required
@@ -164,7 +149,7 @@
               <label for="calculated_lining_cost"> Lining Cost</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="calculated_lining_cost"
                 id="calculated_lining_cost"
                 required
@@ -179,7 +164,7 @@
               <label for="calculated_total_cost"> Total Cost</label>
               <input
                 class="form-control"
-                type="text"
+                type="number"
                 name="calculated_total_cost"
                 id="calculated_total_cost"
                 required
@@ -188,9 +173,26 @@
             </div>
           </div>
           <div class="col-md-6 mb-3">
-            <button (click)="fullyCalculate()" class="btn btn-success">
-              Calculate
-            </button>
+            <div class="form-group">
+              <label for="calculated_yardage_per_width">
+                Calculated Yardage Per Width</label
+              >
+              <input
+                class="form-control"
+                type="number"
+                name="calculated_yardage_per_width"
+                id="calculated_yardage_per_width"
+                required
+                [(ngModel)]="calculated_yardage_per_width"
+              />
+            </div>
+          </div>
+          <div id="row">
+            <div class="col-md-6 mb-3">
+              <button (click)="fullyCalculate()" class="btn btn-success">
+                Calculate
+              </button>
+            </div>
           </div>
         </div>
       </div>
