@@ -4,6 +4,9 @@
       <h2>Adding a new yardage</h2>
     </div>
     <div class="row">
+      <div class="col-md-4 order-md-2">
+        <app-yardages-calculator></app-yardages-calculator>
+      </div>
       <div class="col-md-8 order-md-1">
         <div class="submit-form">
           @if (!submitted) {
@@ -74,7 +77,7 @@
                   <div class="form-group">
                     <label for="panels">Panels</label>
                     <input
-                      type="text"
+                      type="number"
                       name="panels"
                       class="form-control"
                       id="panels"
@@ -87,7 +90,7 @@
                   <div class="form-group">
                     <label for="costPerYard">Cost Per Yard</label>
                     <input
-                      type="text"
+                      type="number"
                       name="costPerYard"
                       class="form-control"
                       id="costPerYard"
@@ -102,7 +105,7 @@
                   <div class="form-group">
                     <label for="fabricCost">fabric Cost</label>
                     <input
-                      type="text"
+                      type="number"
                       name="fabricCost"
                       class="form-control"
                       id="fabricCost"
@@ -115,7 +118,7 @@
                   <div class="form-group">
                     <label for="finishedLength">Finished Length</label>
                     <input
-                      type="text"
+                      type="number"
                       name="finishedLength"
                       class="form-control"
                       id="finishedLength"
@@ -130,7 +133,7 @@
                   <div class="form-group">
                     <label for="laborCost">Labor Cost</label>
                     <input
-                      type="text"
+                      type="number"
                       name="laborCost"
                       class="form-control"
                       id="laborCost"
@@ -143,7 +146,7 @@
                   <div class="form-group">
                     <label for="liningCost">Lining Cost</label>
                     <input
-                      type="text"
+                      type="number"
                       name="liningCost"
                       class="form-control"
                       id="liningCost"
@@ -158,7 +161,7 @@
                   <div class="form-group">
                     <label for="liningPerYard">Lining Per Yard</label>
                     <input
-                      type="text"
+                      type="number"
                       name="liningPerYard"
                       class="form-control"
                       id="liningPerYard"
@@ -171,7 +174,7 @@
                   <div class="form-group">
                     <label for="shopSupplyCost">Shop Supply Cost</label>
                     <input
-                      type="text"
+                      type="number"
                       name="shopSupplyCost"
                       class="form-control"
                       id="shopSupplyCost"
@@ -186,7 +189,7 @@
                   <div class="form-group">
                     <label for="totalWidth">Total Width</label>
                     <input
-                      type="text"
+                      type="number"
                       name="totalWidth"
                       class="form-control"
                       id="totalWidth"
@@ -199,7 +202,7 @@
                   <div class="form-group">
                     <label for="totalYardage">Total Yardage</label>
                     <input
-                      type="text"
+                      type="number"
                       name="totalYardage"
                       class="form-control"
                       id="totalYardage"
@@ -214,7 +217,7 @@
                   <div class="form-group">
                     <label for="widthPerPanel">Width Per Panel</label>
                     <input
-                      type="text"
+                      type="number"
                       name="widthPerPanel"
                       class="form-control"
                       id="widthPerPanel"
@@ -227,7 +230,7 @@
                   <div class="form-group">
                     <label for="yardagePerWidth">Yardage Per Width</label>
                     <input
-                      type="text"
+                      type="number"
                       name="yardagePerWidth"
                       class="form-control"
                       id="yardagePerWidth"

@@ -175,7 +175,7 @@
           <div class="col-md-6 mb-3">
             <div class="form-group">
               <label for="calculated_yardage_per_width">
-                Calculated Yardage Per Width</label
+                Yardage Per Width</label
               >
               <input
                 class="form-control"
@@ -191,6 +191,12 @@
             <div class="col-md-6 mb-3">
               <button (click)="fullyCalculate()" class="btn btn-success">
                 Calculate
+              </button>
+            </div>
+
+            <div class="col-md-6 mb-3">
+              <button (click)="sendCalculation()" class="btn btn-secondary">
+                Register a New Form
               </button>
             </div>
           </div>

@@ -1,13 +1,16 @@
-import { Component } from '@angular/core';
+import { Component, OnDestroy } from '@angular/core';
 import { Yardage } from '../../models/yardage.model';
 import { YardageService } from '../../services/yardage.service';
+import { CalculationTransferService } from '../../services/calculation-transfer.service';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-add-yardage',
   templateUrl: './add-yardage.component.html',
   styleUrl: './add-yardage.component.css',
 })
-export class AddYardageComponent {
+export class AddYardageComponent implements OnDestroy {
+  private subscription: Subscription;
   yardage: Yardage = {
     title: '',
     description: '',
@@ -28,8 +31,39 @@ export class AddYardageComponent {
     yardagePerWidth: 0, // integer in SQL
   };
   submitted = false;
-  constructor(private yardageService: YardageService) {}
+  constructor(
+    private yardageService: YardageService,
+    private calculationTransferService: CalculationTransferService,
+  ) {
+    this.subscription =
+      this.calculationTransferService.currentYardage.subscribe(
+        (calculations) => {
+          if (calculations) {
+            this.updateFormWithCalculations(calculations);
+          }
+        },
+      );
+  }
 
+  ngOnDestroy(): void {
+    if (this.subscription) {
+      this.subscription.unsubscribe();
+    }
+  }
+  updateFormWithCalculations(yardage: any): void {
+    this.yardage.panels = yardage.child_panels;
+    this.yardage.finishedLength = yardage.child_finished_length;
+    this.yardage.widthPerPanel = yardage.child_width_per_panel;
+    this.yardage.costPerYard = yardage.child_cost_per_yard;
+    this.yardage.liningPerYard = yardage.child_lining_per_yard;
+    this.yardage.laborCost = yardage.child_labor_cost;
+    this.yardage.totalWidth = yardage.child_labor_cost;
+    this.yardage.totalYardage = yardage.child_total_yardage;
+    this.yardage.fabricCost = yardage.child_fabric_cost;
+    this.yardage.shopSupplyCost = yardage.child_shop_supply_cost;
+    this.yardage.liningCost = yardage.child_lining_cost;
+    this.yardage.totalCost = yardage.child_total_cost;
+  }
   saveYardage(): void {
     const data = {
       title: this.yardage.title,

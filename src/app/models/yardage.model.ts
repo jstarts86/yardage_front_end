@@ -17,6 +17,7 @@ export class Yardage {
   totalYardage?: number | null; // integer in SQL
   widthPerPanel?: number | null; // integer in SQL
   yardagePerWidth?: number | null; // integer in SQL
+  totalCost?: number | null; // numeric(38, 2) in SQL
 
   constructor() {
     //   this.title = null;
